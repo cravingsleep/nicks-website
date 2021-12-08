@@ -6,6 +6,8 @@ import React from 'react';
 type ShownSection = 'react' | 'nodejs';
 
 function Technology() {
+
+
     return <Section>
         <h3>Technologies</h3>
         <p>Click to find out more</p>
