@@ -1,0 +1,40 @@
+@use "sass:list";
+
+$colours: rgb(181, 236, 242), rgb(246, 202, 186), rgb(191, 249, 191);
+
+.section {
+    padding: 1em;
+
+    &:first-child {
+        border-top: 10px solid list.nth($colours, 2);
+    }
+
+    @for $i from 1 through length($colours) {
+        $seperator: $i - 3;
+        $seperatorString: "3n";
+
+        @if $seperator != 0 {
+            $seperatorString: "3n#{$seperator}"
+        }
+
+        &:nth-child(#{$seperatorString}) {
+            background-color: list.nth($colours, $i);
+            border-bottom: 10px solid list.nth($colours, (($i + 1) % 3) + 1);
+        }
+    }
+
+    // &:nth-child(3n - 2) {
+    //     background-color: list.nth($colours, 1);
+    //     border-bottom: 5px solid list.nth($colours, 3);
+    // }
+
+    // &:nth-child(3n - 1) {
+    //     background-color: list.nth($colours, 2);
+    //     border-bottom: 5px solid list.nth($colours, 1);
+    // }
+
+    // &:nth-child(3n) {
+    //     background-color: list.nth($colours, 3);
+    //     border-bottom: 5px solid list.nth($colours, 2);
+    // }
+}
