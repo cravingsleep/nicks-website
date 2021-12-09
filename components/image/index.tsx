@@ -1,4 +1,4 @@
-import React, { MouseEventHandler } from 'react';
+import React from 'react';
 import classnames from 'Utils/classnames';
 import styles from './index.module.scss';
 
@@ -7,20 +7,17 @@ type CircleImageProps = {
     src: string,
     width?: number,
     height?: number,
-    onClick?: MouseEventHandler<HTMLImageElement>
+    active?: boolean
 };
 
-function CircleImage(props: CircleImageProps) {
+const CircleImage = React.memo(function CircleImage(props: CircleImageProps) {
     return <img
         alt={props.alt}
-        className={classnames([styles['circle-image']], {
-            [styles.interactable]: Boolean(props.onClick)
-        })}
+        className={classnames([styles['circle-image'], styles.interactable])}
         src={props.src}
         width={props.width}
         height={props.height}
-        onClick={props.onClick}
     />;
-}
+});
 
 export { CircleImage };

@@ -1,0 +1,15 @@
+.carousel {
+    padding: 1em 1em 1em 0em;
+
+    display: grid;
+
+    grid-template-columns: repeat(6, 1fr);
+
+    gap: 1em;
+
+    overflow-x: scroll;
+}
+
+.carousel-item {
+    width: 320px;
+}
