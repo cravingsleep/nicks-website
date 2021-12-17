@@ -1,0 +1,7 @@
+@import 'design';
+
+.header {
+    @include Box;
+
+    font-weight: bold;
+}

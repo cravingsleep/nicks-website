@@ -1,0 +1,32 @@
+@import 'design';
+
+.container {
+    @include Box;
+}
+
+.listing {
+    display: flex;
+    gap: 1em;
+    flex-wrap: wrap;
+
+    align-items: center;
+}
+
+.listing-item-image {
+    flex: 0 0 22vw;
+    margin: 0 auto;
+
+    max-width: 10em;
+}
+
+.listing-item {
+    flex: 1 1 20em;
+}
+
+.buy-container {
+    text-align: center;
+}
+
+.buy {
+    @include PositiveCta;
+}

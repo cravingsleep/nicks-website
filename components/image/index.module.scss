@@ -1,23 +1,5 @@
 .circle-image {
     border-radius: 50%;
-    box-shadow: 0px 0px 10px 5px rgba(0, 0, 0, 0.5);
-    border: 2px solid black;
-
     margin: 0 auto;
-
     background-color: white;
-}
-
-.interactable {
-    cursor: pointer;
-
-    $hoverTransitionTime: 0.25s;
-
-    transition: box-shadow $hoverTransitionTime, 
-        transform $hoverTransitionTime;
-
-    &:hover {
-        box-shadow: 0px 0px 10px 5px rgba(0, 0, 0, 0.75);
-        transform: rotate(10deg) scale(1.05, 1.05);
-    }
 }

@@ -7,19 +7,16 @@ type CircleImageProps = {
     src: string,
     width?: number,
     height?: number,
-    onClick?: MouseEventHandler<HTMLImageElement>
+    className?: string
 };
 
 function CircleImage(props: CircleImageProps) {
     return <img
         alt={props.alt}
-        className={classnames([styles['circle-image']], {
-            [styles.interactable]: Boolean(props.onClick)
-        })}
+        className={classnames([styles['circle-image'], props.className || ''])}
         src={props.src}
         width={props.width}
         height={props.height}
-        onClick={props.onClick}
     />;
 }
 

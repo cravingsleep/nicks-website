@@ -1,0 +1,39 @@
+@use 'sass:color';
+
+@mixin Padding {
+    padding: 1em;
+}
+
+@mixin Margin {
+    margin: 1em;
+}
+
+@mixin Radius {
+    border-radius: 5px;
+}
+
+@mixin Box {
+    @include Padding;
+    @include Margin;
+    @include Radius;
+
+    box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.75);
+}
+
+
+@mixin PositiveCta {
+    @include Padding;
+    @include Radius;
+
+    font-weight: bold;
+    border: none;
+
+    cursor: pointer;
+    
+    $ctaColour: rgb(74, 230, 74);
+    background-color: $ctaColour;
+
+    &:hover {
+        background-color: color.adjust($ctaColour, $lightness: -15%);
+    }
+}
