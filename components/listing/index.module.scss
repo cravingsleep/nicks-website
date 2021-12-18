@@ -1,5 +1,10 @@
 @import 'design';
 
+.listings {
+    list-style: none;
+    padding: 0;
+}
+
 .container {
     @include Box;
 }
@@ -15,7 +20,6 @@
 .listing-item-image {
     flex: 0 0 22vw;
     margin: 0 auto;
-
     max-width: 10em;
 }
 
@@ -24,9 +28,15 @@
 }
 
 .buy-container {
-    text-align: center;
+    text-align: right;
 }
 
 .buy {
     @include PositiveCta;
+
+    transition: transform 0.5s;
+
+    &:hover {
+        transform: scale(1.1);
+    }
 }

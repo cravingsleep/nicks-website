@@ -1,4 +1,4 @@
-import React, { MouseEventHandler } from 'react';
+import React from 'react';
 import classnames from 'Utils/classnames';
 import styles from './index.module.scss';
 
