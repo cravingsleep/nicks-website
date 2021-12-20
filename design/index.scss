@@ -33,7 +33,14 @@
     $ctaColour: rgb(74, 230, 74);
     background-color: $ctaColour;
 
+    transition: transform 0.5s;
+
     &:hover {
         background-color: color.adjust($ctaColour, $lightness: -15%);
+        transform: scale(1.1);
+    }
+
+    &:active {
+        background-color: color.adjust($ctaColour, $lightness: -25%);
     }
 }
