@@ -2,8 +2,10 @@
 
 .buy {
     @include PositiveCta;
+    @include BeforeIcon('/add-svgrepo-com.svg');
 }
 
 .added {
-    background-color: lightgray;
-}
+    @include NegativeCta;
+    @include BeforeIcon('/dust-bin-svgrepo-com.svg');
+} 

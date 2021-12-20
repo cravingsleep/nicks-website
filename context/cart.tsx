@@ -31,7 +31,12 @@ type RemoveCart = {
     item: CartItem
 }
 
-type CartAction = AddCart | RemoveCart;
+type ToggleCart = {
+    type: 'toggle',
+    item: CartItem
+}
+
+type CartAction = AddCart | RemoveCart | ToggleCart;
 
 function cartReducer(state: Cart, action: CartAction): Cart {
     switch (action.type) {
@@ -43,6 +48,15 @@ function cartReducer(state: Cart, action: CartAction): Cart {
             return {
                 items: state.items.filter(item => item.title !== action.item.title)
             };
+        case 'toggle': {
+            const itemExists = Boolean(state.items.find(item => item.title === action.item.title));
+
+            if (itemExists) {
+                return cartReducer(state, { type: 'remove', item: action.item });
+            }
+
+            return cartReducer(state, { type: 'add', item: action.item });
+        }
         default:
             throw new Error('Undefined action type!');
     }

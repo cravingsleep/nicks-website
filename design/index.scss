@@ -20,26 +20,53 @@
     box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.75);
 }
 
-@mixin PositiveCta {
+@mixin Cta($baseColour) {
     @include Padding;
     @include Radius;
 
     font-weight: bold;
     border: none;
+    color: white;
 
     cursor: pointer;
     
-    $ctaColour: rgb(74, 230, 74);
-    background-color: $ctaColour;
+    background-color: $baseColour;
 
     transition: transform 0.5s;
 
     &:hover {
-        background-color: color.adjust($ctaColour, $lightness: -15%);
+        background-color: color.adjust($baseColour, $lightness: -15%);
         transform: scale(1.1);
     }
 
     &:active {
-        background-color: color.adjust($ctaColour, $lightness: -25%);
+        background-color: color.adjust($baseColour, $lightness: -25%);
     }
+}
+
+@mixin BeforeIcon($iconUrl) {
+    &:before {
+        display: inline-block;
+        position: relative;
+        content: '';
+
+        /* Using the background-image and
+           its related properties to add
+           the SVG content */
+        background-image: url($iconUrl);
+        background-size: 1em 1em;
+        height: 1em;
+        width: 1em;
+
+        top: 0.15em;
+        margin-right: 0.5em;
+    }
+}
+
+@mixin PositiveCta {
+    @include Cta(rgb(74, 230, 74));
+}
+
+@mixin NegativeCta {
+    @include Cta(rgb(226, 34, 34));
 }

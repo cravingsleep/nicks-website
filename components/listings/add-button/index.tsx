@@ -15,7 +15,7 @@ function ListingAddButton(props: ListingAddButtonProps) {
 
     const onClick = useCallback(() => {
         dispatch({
-            type: 'add',
+            type: 'toggle',
             item: {
                 title,
                 logoUrl
@@ -25,14 +25,13 @@ function ListingAddButton(props: ListingAddButtonProps) {
 
     const added = Boolean(state.items.find(item => item.title === title));
 
-    return <input 
-        className={classnames([styles.buy], {
+    return <button 
+        className={classnames([], {
+            [styles.buy]: !added,
             [styles.added]: added
         })} 
-        type="button" 
-        value={added ? 'Added' :'Add to Cart'} 
-        onClick={added ? undefined : onClick} 
-    />;
+        onClick={onClick} 
+    >{added ? 'Remove' : 'Add'}</button>;
 }
 
 export default ListingAddButton;
