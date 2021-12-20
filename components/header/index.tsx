@@ -3,7 +3,7 @@ import styles from './index.module.scss';
 
 function Header() {
     return <header className={styles.header}>
-        Nick&apos;s Portfolio Shop
+        <h3>Nick&apos;s Portfolio Shop</h3>
     </header>;
 }
 

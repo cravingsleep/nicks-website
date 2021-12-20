@@ -1,13 +1,40 @@
-import React, { Fragment } from 'react';
+import React, { useCallback, useContext } from 'react';
 import { CircleImage } from 'Components/image';
 import styles from './index.module.scss';
+import { CartContext } from 'context/cart';
+import classnames from 'Utils/classnames';
 
-type ListingProps = {
+type ListingAddButtonProps = {
     title: string,
-    description: string,
-    logoUrl: string,
-    logoAlt: string
-};
+    logoUrl: string
+}
+
+function ListingAddButton(props: ListingAddButtonProps) {
+    const { title, logoUrl } = props;
+
+    const { state, dispatch } = useContext(CartContext);
+
+    const onClick = useCallback(() => {
+        dispatch({
+            type: 'add',
+            item: {
+                title,
+                logoUrl
+            }
+        });
+    }, []);
+
+    const added = Boolean(state.items.find(item => item.title === title));
+
+    return <input 
+        className={classnames([styles.buy], {
+            [styles.added]: added
+        })} 
+        type="button" 
+        value={added ? 'Added' :'Add to Cart'} 
+        onClick={added ? undefined : onClick} 
+    />;
+}
 
 function Listing(props: ListingProps) {
     const { title, description, logoUrl, logoAlt } = props;
@@ -25,40 +52,47 @@ function Listing(props: ListingProps) {
             </div>
         </section>
         <section className={styles['buy-container']}>
-            <input className={styles.buy} type="button" value="Add to Cart" />
+            <ListingAddButton title={title} logoUrl={logoUrl} />
         </section>
     </article>;
 }
 
-const reactText = `
+const placeholder = `
 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
 `;
+
+type ListingProps = {
+    title: string,
+    description: string,
+    logoUrl: string,
+    logoAlt: string
+};
 
 function Listings() {
     return <ul className={styles.listings}>
         <Listing
             title="React"
-            description={reactText}
+            description={placeholder}
             logoUrl="https://upload.wikimedia.org/wikipedia/commons/a/a7/React-icon.svg"
             logoAlt="React logo"
         />
         <Listing
-            title="React"
-            description={reactText}
-            logoUrl="https://upload.wikimedia.org/wikipedia/commons/a/a7/React-icon.svg"
-            logoAlt="React logo"
+            title="NodeJS"
+            description={placeholder}
+            logoUrl="https://upload.wikimedia.org/wikipedia/commons/d/d9/Node.js_logo.svg"
+            logoAlt="NodeJS logo"
         />
         <Listing
-            title="React"
-            description={reactText}
-            logoUrl="https://upload.wikimedia.org/wikipedia/commons/a/a7/React-icon.svg"
-            logoAlt="React logo"
+            title="SCSS"
+            description={placeholder}
+            logoUrl="https://upload.wikimedia.org/wikipedia/commons/9/96/Sass_Logo_Color.svg"
+            logoAlt="SCSS logo"
         />
         <Listing
-            title="React"
-            description={reactText}
-            logoUrl="https://upload.wikimedia.org/wikipedia/commons/a/a7/React-icon.svg"
-            logoAlt="React logo"
+            title="Jenkins"
+            description={placeholder}
+            logoUrl="https://upload.wikimedia.org/wikipedia/commons/e/e9/Jenkins_logo.svg"
+            logoAlt="Jenkins logo"
         />
     </ul>;
 }

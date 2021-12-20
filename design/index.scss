@@ -5,7 +5,7 @@
 }
 
 @mixin Margin {
-    margin: 1em;
+    margin: 0.75em;
 }
 
 @mixin Radius {
@@ -19,7 +19,6 @@
 
     box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.75);
 }
-
 
 @mixin PositiveCta {
     @include Padding;
