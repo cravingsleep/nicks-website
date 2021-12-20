@@ -1,0 +1,9 @@
+@import 'design';
+
+.buy {
+    @include PositiveCta;
+}
+
+.added {
+    background-color: lightgray;
+}

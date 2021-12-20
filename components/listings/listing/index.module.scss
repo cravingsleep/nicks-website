@@ -1,14 +1,5 @@
 @import 'design';
 
-.listings {
-    flex: 3 0 25em;
-    list-style: none;
-    padding: 0;
-
-    margin-top: 0;
-    margin-bottom: 0;
-}
-
 .container {
     @include Box;
 }
@@ -33,13 +24,4 @@
 
 .buy-container {
     text-align: right;
-}
-
-.buy {
-    @include PositiveCta;
-    transition: width 0.5s;
-}
-
-.added {
-    background-color: lightgray;
 }

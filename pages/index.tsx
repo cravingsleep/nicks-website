@@ -1,6 +1,6 @@
 import ShoppingCart from 'Components/cart';
 import Header from 'Components/header';
-import Listings from 'Components/listing';
+import Listings from 'Components/listings';
 import { CartProvider } from 'context/cart';
 import React, { Fragment } from 'react';
 import styles from './index.module.scss';
