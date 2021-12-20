@@ -7,11 +7,13 @@ function ShoppingCart() {
 
     return <article className={styles.cart}>
         <h3>Shopping Cart</h3>
-        <ul>
-            {state.items.map((item, i) => <li key={i}>
-                {item.title}
-            </li>)}
-        </ul>
+        {state.items.length === 0 ? 
+            <p>Your cart is empty...</p>
+            : <ul>
+                {state.items.map((item, i) => <li key={i}>
+                    {item.title}
+                </li>)}
+            </ul>}
     </article>;
 }
 

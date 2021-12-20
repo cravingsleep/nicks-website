@@ -36,7 +36,6 @@
 
     &:hover {
         background-color: color.adjust($baseColour, $lightness: -15%);
-        transform: scale(1.1);
     }
 
     &:active {
@@ -50,9 +49,6 @@
         position: relative;
         content: '';
 
-        /* Using the background-image and
-           its related properties to add
-           the SVG content */
         background-image: url($iconUrl);
         background-size: 1em 1em;
         height: 1em;
