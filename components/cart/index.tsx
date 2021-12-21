@@ -9,9 +9,13 @@ function ShoppingCart() {
         <h3>Shopping Cart</h3>
         {state.cart.empty() ? 
             <p>Your cart is empty...</p>
-            : <ul>
-                {state.cart.toArray().map((item, i) => <li key={i}>
-                    {item.title}
+            : <ul className={styles['cart-items']}>
+                {state.cart.toArray().map((item, i) => <li 
+                    className={styles['cart-item']} 
+                    key={i}
+                >
+                    <img className={styles.logo} src={item.logoUrl} />
+                    <span>{item.title}</span>
                 </li>)}
             </ul>}
     </article>;

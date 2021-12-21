@@ -3,3 +3,25 @@
 .cart {
     @include Box;
 }
+
+.cart-items {
+    list-style: none;
+    padding: 0;
+}
+
+.cart-item {
+    @include Box($shadow: false);
+
+    background-color: lightgreen;
+}
+
+.logo {
+    width: 2em;
+    height: 2em;
+
+    position: relative;
+
+    top: 0.5em;
+
+    margin-right: 1em;
+}

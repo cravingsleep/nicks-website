@@ -12,12 +12,14 @@
     border-radius: 5px;
 }
 
-@mixin Box {
+@mixin Box($shadow: true) {
     @include Padding;
     @include Margin;
     @include Radius;
 
-    box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.75);
+    @if $shadow {
+        box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.75);
+    }
 }
 
 @mixin Cta($baseColour) {
