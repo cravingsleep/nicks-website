@@ -23,7 +23,7 @@ function ListingAddButton(props: ListingAddButtonProps) {
         });
     }, []);
 
-    const added = Boolean(state.items.find(item => item.title === title));
+    const added = state.cart.has(title);
 
     return <button 
         className={classnames([], {

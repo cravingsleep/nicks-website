@@ -7,10 +7,10 @@ function ShoppingCart() {
 
     return <article className={styles.cart}>
         <h3>Shopping Cart</h3>
-        {state.items.length === 0 ? 
+        {state.cart.empty() ? 
             <p>Your cart is empty...</p>
             : <ul>
-                {state.items.map((item, i) => <li key={i}>
+                {state.cart.toArray().map((item, i) => <li key={i}>
                     {item.title}
                 </li>)}
             </ul>}

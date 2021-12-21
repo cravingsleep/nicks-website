@@ -1,20 +1,14 @@
 import React, { Dispatch, useReducer } from 'react';
+import Cart, { CartItem } from './domain';
 
-type CartItem = {
-    title: string,
-    logoUrl: string
-};
-
-type Cart = {
-    items: CartItem[]
-};
-
-const emptyCart: Cart = {
-    items: []
-};
+type State = {
+    cart: Cart
+}
 
 const emptyCartContext = {
-    state: emptyCart,
+    state: {
+        cart: Cart.EMPTY_CART
+    },
     // eslint-disable-next-line @typescript-eslint/no-empty-function
     dispatch: (() => {}) as Dispatch<CartAction>
 };
@@ -38,26 +32,10 @@ type ToggleCart = {
 
 type CartAction = AddCart | RemoveCart | ToggleCart;
 
-function cartReducer(state: Cart, action: CartAction): Cart {
-    switch (action.type) {
-        case 'add':
-            return {
-                items: state.items.concat(action.item)
-            };
-        case 'remove':
-            return {
-                items: state.items.filter(item => item.title !== action.item.title)
-            };
-        case 'toggle': {
-            const itemExists = Boolean(state.items.find(item => item.title === action.item.title));
-
-            const addOrRemove = itemExists ? 'remove' : 'add';
-
-            return cartReducer(state, { type: addOrRemove, item: action.item });
-        }
-        default:
-            throw new Error('Undefined action type!');
-    }
+function cartReducer(state: State, action: CartAction): State {
+    return {
+        cart: state.cart[action.type](action.item)
+    };
 }
 
 type CartProviderProps = {
@@ -65,7 +43,7 @@ type CartProviderProps = {
 }
 
 function CartProvider(props: CartProviderProps) {
-    const [state, dispatch] = useReducer(cartReducer, emptyCart);
+    const [state, dispatch] = useReducer(cartReducer, { cart: Cart.EMPTY_CART });
 
     return <CartContext.Provider value={{state, dispatch}}>
         {props.children}
