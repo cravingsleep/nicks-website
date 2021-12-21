@@ -51,11 +51,9 @@ function cartReducer(state: Cart, action: CartAction): Cart {
         case 'toggle': {
             const itemExists = Boolean(state.items.find(item => item.title === action.item.title));
 
-            if (itemExists) {
-                return cartReducer(state, { type: 'remove', item: action.item });
-            }
+            const addOrRemove = itemExists ? 'remove' : 'add';
 
-            return cartReducer(state, { type: 'add', item: action.item });
+            return cartReducer(state, { type: addOrRemove, item: action.item });
         }
         default:
             throw new Error('Undefined action type!');
