@@ -30,12 +30,27 @@ type ToggleCart = {
     item: CartItem
 }
 
-type CartAction = AddCart | RemoveCart | ToggleCart;
+type ClearCart = {
+    type: 'clear'
+}
+
+type CartAction = AddCart | RemoveCart | ToggleCart | ClearCart;
 
 function cartReducer(state: State, action: CartAction): State {
-    return {
-        cart: state.cart[action.type](action.item)
-    };
+    switch (action.type) {
+        case 'add':
+        case 'remove':
+        case 'toggle':
+            return {
+                cart: state.cart[action.type](action.item)
+            }; 
+        case 'clear':
+            return {
+                cart: state.cart.clear()
+            };
+        default:
+            throw new Error('Unrecognised cart command.');
+    }
 }
 
 type CartProviderProps = {

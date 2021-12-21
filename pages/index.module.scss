@@ -3,5 +3,7 @@
         display: grid;
 
         grid-template-columns: 3fr 7fr;
+
+        align-items: start;
     }
 }

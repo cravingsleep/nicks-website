@@ -41,6 +41,10 @@ class Cart {
         return new Cart(this.items);
     }
 
+    public clear(): Cart {
+        return new Cart(new Map());
+    }
+
     public has(title: string): boolean {
         return this.items.has(title);
     }

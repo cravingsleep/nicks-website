@@ -1,23 +1,37 @@
+import ListingAddButton from 'Components/listings/add-button';
 import { CartContext } from 'context/cart';
-import React, { useContext } from 'react';
+import React, { Fragment, useCallback, useContext } from 'react';
 import styles from './index.module.scss';
 
 function ShoppingCart() {
-    const { state } = useContext(CartContext);
+    const { state, dispatch } = useContext(CartContext);
+
+    const clearAll = useCallback(() => {
+        dispatch({
+            type: 'clear'
+        });
+    }, []);
 
     return <article className={styles.cart}>
         <h3>Shopping Cart</h3>
         {state.cart.empty() ? 
             <p>Your cart is empty...</p>
-            : <ul className={styles['cart-items']}>
-                {state.cart.toArray().map((item, i) => <li 
-                    className={styles['cart-item']} 
-                    key={i}
-                >
-                    <img className={styles.logo} src={item.logoUrl} />
-                    <span>{item.title}</span>
-                </li>)}
-            </ul>}
+            : <Fragment>
+                <table className={styles['cart-items']}>
+                    <tbody>
+                        {state.cart.toArray().map(item => <tr
+                            className={styles['cart-item']} 
+                            key={item.title}
+                        >
+                            <td><img className={styles.logo} src={item.logoUrl} /></td>
+                            <td>{item.title}</td>
+                            <td><ListingAddButton title={item.title} logoUrl={item.logoUrl} /></td>
+                        </tr>)}
+                    </tbody>
+                </table>
+                <button className={styles.clear} onClick={clearAll}>Clear All</button>
+            </Fragment>
+        }
     </article>;
 }
 

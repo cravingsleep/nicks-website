@@ -2,26 +2,38 @@
 
 .cart {
     @include Box;
+
+    position: sticky;
+    top: 1em;
 }
 
 .cart-items {
-    list-style: none;
-    padding: 0;
+    @include MarginVertical;
+
+    width: 100%;
+
+    border-collapse: collapse;
+    text-align: center;
 }
 
 .cart-item {
-    @include Box($shadow: false);
+    border-bottom: 1px solid black;
 
-    background-color: lightgreen;
+    &:first-child {
+        border-top: 1px solid black;
+    }
+    
+    td {
+        padding-top: 0.5em;
+        padding-bottom: 0.5em;
+    }
 }
 
 .logo {
     width: 2em;
     height: 2em;
+}
 
-    position: relative;
-
-    top: 0.5em;
-
-    margin-right: 1em;
+.clear {
+    @include NegativeCta;
 }
