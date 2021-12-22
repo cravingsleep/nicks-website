@@ -1,6 +1,6 @@
 import { CartContext } from 'context/cart';
 import React, { Fragment, useCallback, useContext, useState } from 'react';
-import { CartItems } from '..';
+import CartItems from '../cart-items';
 import styles from './index.module.scss';
 
 function MobileCart() {

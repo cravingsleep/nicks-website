@@ -1,20 +1,5 @@
 @import 'design';
 
-.cart {
-    @include DesktopOnly {
-        @include Box;
-
-        position: sticky;
-        top: 1em;
-        z-index: 1;
-        background-color: white;
-    }
-
-    @include MobileOnly {
-        display: none;
-    }
-}
-
 .cart-items {
     @include MarginVertical;
 

@@ -1,0 +1,19 @@
+@use 'sass:color';
+@import 'design';
+
+.cart {
+    @include DesktopOnly {
+        @include Box;
+
+        z-index: 1;
+        background-color: white;
+
+        margin-bottom: -1em;
+
+        text-align: left;
+    }
+
+    @include MobileOnly {
+        display: none;
+    }
+}
