@@ -12,12 +12,16 @@ function MobileCart() {
         setIsCartOpen(prev => !prev);
     }, []);
 
+    const closeCart = useCallback(() => {
+        setIsCartOpen(false);
+    }, []);
+
     return <Fragment>
         <div className={styles['container']}>
             {isCartOpen && <article className={styles.cart}>
-                <CartItems />
+                <CartItems onClearAll={closeCart} />
             </article>}
-            <button 
+            <button
                 className={styles['cart-button']}
                 onClick={toggleCartOpen}
             >
@@ -25,8 +29,10 @@ function MobileCart() {
                     src={isCartOpen ? '/close-svgrepo-com.svg' : '/cart-svgrepo-com.svg'}
                     alt="Shopping Cart Icon"
                 />
+                {!isCartOpen && state.cart.itemCount() > 0 &&
+                    <span className={styles['cart-number']}>{state.cart.itemCount()}</span>
+                }
             </button>
-            <span className={styles['cart-number']}>{state.cart.itemCount()}</span>
         </div>
 
     </Fragment>;

@@ -1,12 +1,18 @@
 @import 'design';
 
 .cart {
-    @include Box;
+    @include DesktopOnly {
+        @include Box;
 
-    position: sticky;
-    top: 1em;
-    z-index: 1;
-    background-color: white;
+        position: sticky;
+        top: 1em;
+        z-index: 1;
+        background-color: white;
+    }
+
+    @include MobileOnly {
+        display: none;
+    }
 }
 
 .cart-items {

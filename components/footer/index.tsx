@@ -11,6 +11,8 @@ function Footer() {
             &nbsp;and the logos which are from <a href="https://wikipedia.com">Wikipedia</a>.
         </p>
         <p>Made using React, NextJS, SCSS and Typescript.</p>
+        {/* {isMobile && <p>You should try it on Desktop too!</p>}
+        {!isMobile && <p>You should try it on Mobile too!</p>} */}
         <p>Contact: <a href="mailto:cravingsleep@gmail.com">cravingsleep@gmail.com</a></p>
     </footer>;
 }

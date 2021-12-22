@@ -12,6 +12,8 @@ function Home() {
         <Head>
             <link rel="prefetch" href="/add-svgrepo-com.svg" />
             <link rel="prefetch" href="/dust-bin-svgrepo-com.svg" />
+            <link rel="prefetch" href="/cart-svgrepo-com.svg" />
+            <link rel="prefetch" href="/close-svgrepo-com.svg" />
         </Head>
         <Header />
         <main className={styles.container}>

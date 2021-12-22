@@ -2,17 +2,22 @@ import ListingAddButton from 'Components/listings/add-button';
 import { CartContext } from 'context/cart';
 import React, { Fragment, useCallback, useContext } from 'react';
 import styles from './index.module.scss';
-import { MobileView, BrowserView } from 'react-device-detect';
 import MobileCart from './mobile';
 
-function CartItems() {
+type CartItemsProps = {
+    onClearAll?: () => void
+}
+
+function CartItems(props: CartItemsProps) {
     const { state, dispatch } = useContext(CartContext);
 
     const clearAll = useCallback(() => {
         dispatch({
             type: 'clear'
         });
-    }, []);
+
+        props.onClearAll?.();
+    }, [props.onClearAll]);
 
     return <Fragment>
         <h3>Shopping Cart</h3>
@@ -39,14 +44,10 @@ function CartItems() {
 
 const ShoppingCart = React.memo(function ShoppingCart() {
     return <Fragment>
-        <BrowserView renderWithFragment>
-            <article className={styles.cart}>
-                <CartItems />
-            </article>
-        </BrowserView>
-        <MobileView renderWithFragment>
-            <MobileCart />
-        </MobileView>
+        <article className={styles.cart}>
+            <CartItems />
+        </article>
+        <MobileCart />
     </Fragment>;
 });
 
