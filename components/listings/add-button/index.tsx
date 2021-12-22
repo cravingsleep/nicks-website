@@ -8,7 +8,7 @@ type ListingAddButtonProps = {
     logoUrl: string
 }
 
-function ListingAddButton(props: ListingAddButtonProps) {
+const ListingAddButton = React.memo(function ListingAddButton(props: ListingAddButtonProps) {
     const { title, logoUrl } = props;
 
     const { state, dispatch } = useContext(CartContext);
@@ -32,6 +32,6 @@ function ListingAddButton(props: ListingAddButtonProps) {
         })} 
         onClick={onClick} 
     >{added ? 'Remove' : 'Add'}</button>;
-}
+});
 
 export default ListingAddButton;

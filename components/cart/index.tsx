@@ -3,7 +3,7 @@ import { CartContext } from 'context/cart';
 import React, { Fragment, useCallback, useContext } from 'react';
 import styles from './index.module.scss';
 
-function ShoppingCart() {
+const ShoppingCart = React.memo(function ShoppingCart() {
     const { state, dispatch } = useContext(CartContext);
 
     const clearAll = useCallback(() => {
@@ -33,6 +33,6 @@ function ShoppingCart() {
             </Fragment>
         }
     </article>;
-}
+});
 
 export default ShoppingCart;
