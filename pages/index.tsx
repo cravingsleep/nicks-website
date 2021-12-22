@@ -5,6 +5,7 @@ import { CartProvider } from 'context/cart';
 import React, { Fragment } from 'react';
 import styles from './index.module.scss';
 import Head from 'next/head';
+import Footer from 'Components/footer';
 
 function Home() {
     return <Fragment>
@@ -13,12 +14,13 @@ function Home() {
             <link rel="prefetch" href="/dust-bin-svgrepo-com.svg" />
         </Head>
         <Header />
-        <section className={styles.container}>
+        <main className={styles.container}>
             <CartProvider>
                 <ShoppingCart />
                 <Listings />
             </CartProvider>
-        </section>
+        </main>
+        <Footer />
     </Fragment>;
 }
 
