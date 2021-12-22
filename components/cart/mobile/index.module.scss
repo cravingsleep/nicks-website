@@ -1,0 +1,48 @@
+@use 'sass:color';
+@import 'design';
+
+.container {
+    position: fixed;
+    width: 100%;
+    text-align: right;
+
+    left: 0;
+    bottom: 0;
+
+    z-index: 1;
+}
+
+.cart {
+    @include Box;
+
+    z-index: 1;
+    background-color: white;
+
+    margin-bottom: -1em;
+
+    text-align: left;
+}
+
+.cart-button {
+    @include Padding;
+    @include Margin;
+    margin-top: 0;
+
+    border-radius: 50%;
+
+    img {
+        position: relative;
+        width: 2em;
+        top: 0.1em;
+        left: -0.1em;
+    }
+
+    $baseColour: rgb(62, 62, 228);
+
+    background-color: $baseColour;
+    border: 3px solid color.adjust($baseColour, $lightness: +10%);
+
+    &:active {
+        background-color: color.adjust($baseColour, $lightness: +10%);
+    }
+}

@@ -73,3 +73,15 @@
 @mixin NegativeCta {
     @include Cta(rgb(226, 34, 34));
 }
+
+@mixin MobileOnly {
+    @media only screen and (max-width: 720px) {
+        @content
+    }
+}
+
+@mixin DesktopOnly {
+    @media only screen and (min-width: 720px) {
+        @content
+    }
+}

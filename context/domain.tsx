@@ -53,6 +53,10 @@ class Cart {
         return Array.from(this.items.values());
     }
 
+    public itemCount(): number {
+        return this.items.size;
+    }
+
     public empty(): boolean {
         return this.toArray().length === 0;
     }
