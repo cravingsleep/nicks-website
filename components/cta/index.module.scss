@@ -40,20 +40,12 @@
     }
 }
 
-@mixin PositiveCta {
+.positive {
     @include Cta(rgb(74, 230, 74));
 }
 
-@mixin NegativeCta {
-    @include Cta(rgb(226, 34, 34));
-}
-
-.positive {
-    @include PositiveCta;
-}
-
 .negative {
-    @include NegativeCta;
+    @include Cta(rgb(226, 34, 34));
 }
 
 $icon-map: (
