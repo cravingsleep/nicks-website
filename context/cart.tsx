@@ -22,7 +22,7 @@ type AddCart = {
 
 type RemoveCart = {
     type: 'remove',
-    item: CartItem
+    title: string
 }
 
 type ToggleCart = {
@@ -39,11 +39,14 @@ type CartAction = AddCart | RemoveCart | ToggleCart | ClearCart;
 function cartReducer(state: State, action: CartAction): State {
     switch (action.type) {
         case 'add':
-        case 'remove':
         case 'toggle':
             return {
                 cart: state.cart[action.type](action.item)
             }; 
+        case 'remove':
+            return {
+                cart: state.cart.remove(action.title)
+            };
         case 'clear':
             return {
                 cart: state.cart.clear()

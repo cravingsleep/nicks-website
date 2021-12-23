@@ -24,9 +24,7 @@ class Cart {
     public toggle(cartItem: CartItem): Cart {
         const hasItem = this.items.has(cartItem.title);
 
-        const addOrRemove = hasItem ? 'remove' : 'add';
-
-        return this[addOrRemove](cartItem);
+        return hasItem ? this.remove(cartItem.title) : this.add(cartItem);
     }
 
     public add(cartItem: CartItem): Cart {
@@ -35,8 +33,8 @@ class Cart {
         return new Cart(this.items);
     }
 
-    public remove(cartItem: CartItem): Cart {
-        this.items.delete(cartItem.title);
+    public remove(title: string): Cart {
+        this.items.delete(title);
 
         return new Cart(this.items);
     }

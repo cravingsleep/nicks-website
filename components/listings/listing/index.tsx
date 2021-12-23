@@ -1,7 +1,7 @@
 import React from 'react';
 import { CircleImage } from 'Components/image';
 import styles from './index.module.scss';
-import ListingAddButton from '../add-button';
+import ListingAddButton from '../toggle-button';
 
 type ListingProps = {
     title: string,

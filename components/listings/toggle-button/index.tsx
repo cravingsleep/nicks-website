@@ -1,14 +1,13 @@
 import React, { useCallback, useContext } from 'react';
-import styles from './index.module.scss';
 import { CartContext } from 'context/cart';
-import classnames from 'Utils/classnames';
+import Cta from 'Components/cta';
 
-type ListingAddButtonProps = {
+type ListingToggleButtonProps = {
     title: string,
     logoUrl: string
 }
 
-const ListingAddButton = React.memo(function ListingAddButton(props: ListingAddButtonProps) {
+const ListingToggleButton = React.memo(function ListingToggleButton(props: ListingToggleButtonProps) {
     const { title, logoUrl } = props;
 
     const { state, dispatch } = useContext(CartContext);
@@ -25,13 +24,13 @@ const ListingAddButton = React.memo(function ListingAddButton(props: ListingAddB
 
     const added = state.cart.has(title);
 
-    return <button 
-        className={classnames([], {
-            [styles.buy]: !added,
-            [styles.added]: added
-        })} 
+    return <Cta 
+        type={added ? 'negative' : 'positive'}
+        icon={added ? 'bin' : 'add'}
         onClick={onClick} 
-    >{added ? 'Remove' : 'Add'}</button>;
+    >
+        {added ? 'Remove' : 'Add'}
+    </Cta>;
 });
 
-export default ListingAddButton;
+export default ListingToggleButton;
