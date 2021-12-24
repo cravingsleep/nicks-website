@@ -10,10 +10,10 @@
 }
 
 .cart-item {
-    border-bottom: 1px solid black;
+    border-bottom: 2px solid $borderColour;
 
     &:first-child {
-        border-top: 1px solid black;
+        border-top: 2px solid $borderColour;
     }
     
     td {
@@ -25,9 +25,4 @@
 .logo {
     width: 2em;
     height: 2em;
-}
-
-.button-container {
-    display: flex;
-    justify-content: space-around;
 }

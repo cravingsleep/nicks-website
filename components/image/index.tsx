@@ -2,22 +2,25 @@ import React from 'react';
 import classnames from 'Utils/classnames';
 import styles from './index.module.scss';
 
-type CircleImageProps = {
+type ImageProps = {
     alt: string,
     src: string,
     width?: number,
     height?: number,
-    className?: string
+    className?: string,
+    circle?: boolean
 };
 
-function CircleImage(props: CircleImageProps) {
+function Image(props: ImageProps) {
     return <img
         alt={props.alt}
-        className={classnames([styles['circle-image'], props.className || ''])}
+        className={classnames([styles['image'], props.className || ''], {
+            [styles['circle']]: Boolean(props.circle)
+        })}
         src={props.src}
         width={props.width}
         height={props.height}
     />;
 }
 
-export { CircleImage };
+export { Image };

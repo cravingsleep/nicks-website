@@ -29,7 +29,7 @@ const ListingToggleButton = React.memo(function ListingToggleButton(props: Listi
         icon={added ? 'bin' : 'add'}
         onClick={onClick} 
     >
-        {added ? 'Remove' : 'Add'}
+        {added ? 'Remove' : 'Add To Cart'}
     </Cta>;
 });
 

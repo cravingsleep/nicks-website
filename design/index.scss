@@ -1,5 +1,7 @@
 @use 'sass:color';
 
+$borderColour: rgb(163, 161, 161);
+
 @mixin Padding {
     padding: 1em;
 }
@@ -13,17 +15,27 @@
     margin: 0.75em;
 }
 
-@mixin Radius {
-    border-radius: 5px;
+@mixin Border($colour) {
+    border: 2px solid $colour;
 }
 
-@mixin Box($shadow: true) {
+@mixin Shadow($baseColour, $isActive: false) {
+    box-shadow: 3px 3px 0px 0px color.adjust($baseColour, $lightness: -10%);
+
+    @if $isActive {
+        &:active {
+            box-shadow: none;
+        }
+    }
+}
+
+@mixin Box($border: true) {
     @include Padding;
     @include Margin;
-    @include Radius;
 
-    @if $shadow {
-        box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.75);
+    @if $border {
+        @include Border($borderColour);
+        @include Shadow($borderColour);
     }
 }
 

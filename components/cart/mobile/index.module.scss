@@ -11,6 +11,8 @@
         bottom: 0;
 
         z-index: 1;
+
+        pointer-events: none;
     }
 
     @include DesktopOnly {
@@ -27,6 +29,8 @@
     margin-bottom: -1em;
 
     text-align: left;
+
+    pointer-events: all;
 }
 
 $baseColour: rgb(62, 62, 228);
@@ -34,9 +38,12 @@ $baseColour: rgb(62, 62, 228);
 .cart-button {
     @include Padding;
     @include Margin;
+    @include Shadow($baseColour, $isActive: true);
     margin-top: 0;
 
     border-radius: 50%;
+
+    pointer-events: all;
 
     img {
         position: relative;
@@ -46,7 +53,7 @@ $baseColour: rgb(62, 62, 228);
     }
 
     background-color: $baseColour;
-    border: 3px solid color.adjust($baseColour, $lightness: +10%);
+    border: 2px solid black;
 
     &:active {
         background-color: color.adjust($baseColour, $lightness: +10%);

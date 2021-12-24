@@ -1,11 +1,8 @@
 import ShoppingCart from 'Components/cart';
-import Header from 'Components/header';
 import Listings from 'Components/listings';
-import { CartProvider } from 'context/cart';
 import React, { Fragment } from 'react';
-import styles from './index.module.scss';
 import Head from 'next/head';
-import Footer from 'Components/footer';
+import styles from './index.module.scss';
 
 function Home() {
     return <Fragment>
@@ -15,14 +12,10 @@ function Home() {
             <link rel="prefetch" href="/cart-svgrepo-com.svg" />
             <link rel="prefetch" href="/close-svgrepo-com.svg" />
         </Head>
-        <Header />
-        <main className={styles.container}>
-            <CartProvider>
-                <ShoppingCart />
-                <Listings />
-            </CartProvider>
-        </main>
-        <Footer />
+        <div className={styles.container}>
+            <ShoppingCart />
+            <Listings />
+        </div>
     </Fragment>;
 }
 

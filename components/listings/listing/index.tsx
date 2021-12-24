@@ -1,5 +1,5 @@
 import React from 'react';
-import { CircleImage } from 'Components/image';
+import { Image } from 'Components/image';
 import styles from './index.module.scss';
 import ListingAddButton from '../toggle-button';
 
@@ -15,7 +15,7 @@ function Listing(props: ListingProps) {
 
     return <li className={styles.container}>
         <section className={styles.listing}>
-            <CircleImage
+            <Image
                 src={logoUrl}
                 alt={logoAlt}
                 className={styles['listing-item-image']}

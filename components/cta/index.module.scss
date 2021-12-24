@@ -3,10 +3,10 @@
 
 @mixin Cta($baseColour) {
     @include Padding;
-    @include Radius;
+    @include Shadow($baseColour, $isActive: true);
 
     font-weight: bold;
-    border: none;
+    border: 2px solid black;
     color: white;
 
     cursor: pointer;
@@ -16,11 +16,11 @@
     transition: transform 0.5s;
 
     &:hover {
-        background-color: color.adjust($baseColour, $lightness: -15%);
+        background-color: color.adjust($baseColour, $lightness: -15%);;
     }
 
     &:active {
-        background-color: color.adjust($baseColour, $lightness: -25%);
+        background-color: color.adjust($baseColour, $lightness: -15%);
     }
 }
 

@@ -11,3 +11,15 @@
     width: 4em;
     margin-bottom: 1em;
 }
+
+.platform-message-desktop {
+    @include DesktopOnly {
+        display: none;
+    }
+}
+
+.platform-message-mobile {
+    @include MobileOnly {
+        display: none;
+    }
+}
