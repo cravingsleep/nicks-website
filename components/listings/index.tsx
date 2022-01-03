@@ -8,8 +8,8 @@ const react = `
 `;
 
 const nodejs = `
-    My time on the Hotels.com Web Platform team encompasses a lot of back end work in both
-    Hapi and Express.js.
+    My work creating an ExpressJS backend to support massive amounts
+    of traffic.
 `;
 
 const scss = `
@@ -27,6 +27,11 @@ const docker = `
 
 const experience = `
     My time at Expedia Group and the various teams I have been a part of.
+`;
+
+const aboutme = `
+    My time on the Great Britain U24 Ultimate Frisbee team and my love of juggling, 
+    sports and travel!
 `;
 
 function Listings() {
@@ -62,6 +67,12 @@ function Listings() {
         <Listing
             title="Experience"
             description={experience}
+        />
+        <Listing
+            title="A little more about me..."
+            description={aboutme}
+            // logoUrl="/face.jpg"
+            // logoAlt="A picture of me"
         />
     </ul>;
 }
