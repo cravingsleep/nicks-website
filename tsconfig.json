@@ -20,11 +20,15 @@
     "jsx": "preserve",
     "baseUrl": ".",
     "paths": {
-      "Components/*": ["components/*"],
-      "Mocks/*": ["mocks/*"],
-      "Api/*": ["pages/api/*"],
-      "Utils/*": ["utils/*"],
-      "State/*": ["pages/state/*"]
+      "Components/*": [
+        "components/*"
+      ],
+      "Utils/*": [
+        "utils/*"
+      ],
+      "Design": [
+        "design/index.module.scss"
+      ]
     }
   },
   "include": [

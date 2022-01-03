@@ -1,9 +1,11 @@
 import { Image } from 'Components/image';
 import React from 'react';
 import styles from './index.module.scss';
+import design from 'Design';
+import classnames from 'Utils/classnames';
 
 function Footer() {
-    return <footer className={styles.footer}>
+    return <footer className={classnames([design['box-border'], styles.footer])}>
         <Image className={styles.img} src="/face.jpg" alt="A picture of me" circle />
         <h3>A creation of Nick Barker</h3>
         <p className={styles.disclaimer}>

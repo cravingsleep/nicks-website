@@ -1,8 +1,6 @@
 @import 'design';
 
 .footer {
-    @include Box;
-
     font-size: 0.75em;
     font-style: italic;
 }

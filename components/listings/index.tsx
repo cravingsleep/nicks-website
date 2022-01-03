@@ -2,12 +2,8 @@ import React from 'react';
 import styles from './index.module.scss';
 import Listing from './listing';
 
-// const placeholder = `
-// Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-// `;
-
 const react = `
-    Learn more about my time in the Hotels.com Web Platform team. Supporting a new and
+    My time in the Hotels.com Web Platform team. Supporting a new and
     large React application from 0% traffic to 100%.
 `;
 
@@ -17,11 +13,20 @@ const nodejs = `
 `;
 
 const scss = `
-    I love making unique and accessible interfaces using CSS and SCSS. Including this one!
+    My experience working with carefully constructed design systems that meet the highest
+    standards for responsiveness and accessibility. 
 `;
 
 const jenkins = `
-    Add me to the cart to learn about how I constructed a new Spinnaker and Jenkins pipeline.
+    How I constructed a new Spinnaker and Jenkins pipeline with Github Actions integration.
+`;
+
+const docker = `
+    How I rewrote Docker images for multi-stage build improvements.
+`;
+
+const experience = `
+    My time at Expedia Group and the various teams I have been a part of.
 `;
 
 function Listings() {
@@ -49,6 +54,14 @@ function Listings() {
             description={jenkins}
             logoUrl="https://upload.wikimedia.org/wikipedia/commons/e/e9/Jenkins_logo.svg"
             logoAlt="Jenkins logo"
+        />
+        <Listing
+            title="Docker"
+            description={docker}
+        />
+        <Listing
+            title="Experience"
+            description={experience}
         />
     </ul>;
 }

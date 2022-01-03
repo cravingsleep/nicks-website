@@ -1,10 +1,12 @@
 type CartItem = {
     title: string,
-    logoUrl: string
+    logoUrl?: string
 };
 
 /**
  * An immutable shopping cart.
+ * 
+ * TODO make the Map actually immutable.
  */
 class Cart {
     /**

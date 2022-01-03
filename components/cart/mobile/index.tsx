@@ -1,7 +1,9 @@
 import { CartContext } from 'context/cart';
 import React, { Fragment, useCallback, useContext, useState } from 'react';
+import classnames from 'Utils/classnames';
 import CartItems from '../cart-items';
 import styles from './index.module.scss';
+import design from 'Design';
 
 function MobileCart() {
     const { state } = useContext(CartContext);
@@ -18,7 +20,7 @@ function MobileCart() {
 
     return <Fragment>
         <div className={styles['container']}>
-            {isCartOpen && <article className={styles.cart}>
+            {isCartOpen && <article className={classnames([design['box-border'], styles.cart])}>
                 <CartItems onClearAll={closeCart} />
             </article>}
             <button

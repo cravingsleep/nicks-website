@@ -29,24 +29,24 @@ $borderColour: rgb(163, 161, 161);
     }
 }
 
-@mixin Box($border: true) {
+@mixin Box {
     @include Padding;
     @include Margin;
 
-    @if $border {
-        @include Border($borderColour);
-        @include Shadow($borderColour);
-    }
+    background-color: white;
+
+    @include Border($borderColour);
+    @include Shadow($borderColour);
 }
 
 @mixin MobileOnly {
     @media only screen and (max-width: 720px) {
-        @content
+        @content;
     }
 }
 
 @mixin DesktopOnly {
     @media only screen and (min-width: 720px) {
-        @content
+        @content;
     }
 }

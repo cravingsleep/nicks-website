@@ -53,10 +53,10 @@ function CartTable(props: CartTableProps) {
                             className={styles['cart-item']} 
                             key={item.title}
                         >
-                            <td>
+                            {item.logoUrl && <td>
                                 <img className={styles.logo} src={item.logoUrl} />
-                            </td>
-                            <td>
+                            </td>}
+                            <td colSpan={item.logoUrl ? undefined : 2}>
                                 {item.title}
                             </td>
                             {props.hideButtons !== true && <td>

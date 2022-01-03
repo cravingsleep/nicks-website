@@ -4,7 +4,7 @@ import Cta from 'Components/cta';
 
 type ListingToggleButtonProps = {
     title: string,
-    logoUrl: string
+    logoUrl?: string
 }
 
 const ListingToggleButton = React.memo(function ListingToggleButton(props: ListingToggleButtonProps) {

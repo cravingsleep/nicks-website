@@ -3,14 +3,10 @@
 
 .cart {
     @include DesktopOnly {
-        @include Box;
-
         position: sticky;
         top: 1em;
 
         z-index: 1;
-        background-color: white;
-
         margin-bottom: -1em;
 
         text-align: left;
