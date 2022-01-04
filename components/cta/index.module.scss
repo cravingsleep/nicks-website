@@ -13,14 +13,15 @@
     
     background-color: $baseColour;
 
-    transition: transform 0.5s;
-
     &:hover {
         background-color: color.adjust($baseColour, $lightness: -15%);;
     }
 
     &:active {
         background-color: color.adjust($baseColour, $lightness: -15%);
+        
+        // make the buttons sink into the shadow for a press feel
+        transform: translate($shadowOffset, $shadowOffset);
     }
 }
 
