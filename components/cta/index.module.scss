@@ -1,16 +1,9 @@
 @use 'sass:color';
 @import 'design';
 
-@mixin Cta($baseColour) {
-    @include Padding;
+@mixin CtaColour($baseColour) {
     @include Shadow($baseColour, $isActive: true);
 
-    font-weight: bold;
-    border: 2px solid black;
-    color: white;
-
-    cursor: pointer;
-    
     background-color: $baseColour;
 
     &:hover {
@@ -19,9 +12,6 @@
 
     &:active {
         background-color: color.adjust($baseColour, $lightness: -15%);
-        
-        // make the buttons sink into the shadow for a press feel
-        transform: translate($shadowOffset, $shadowOffset);
     }
 }
 
@@ -41,12 +31,27 @@
     }
 }
 
+.cta {
+    @include Padding;
+
+    font-weight: bold;
+    border: 2px solid black;
+    color: white;
+
+    cursor: pointer;
+
+    &:active { 
+        // make the buttons sink into the shadow for a press feel
+        transform: translate($shadowOffset, $shadowOffset);
+    }
+}
+
 .positive {
-    @include Cta(rgb(74, 230, 74));
+    @include CtaColour(rgb(74, 230, 74));
 }
 
 .negative {
-    @include Cta(rgb(226, 34, 34));
+    @include CtaColour(rgb(226, 34, 34));
 }
 
 $icon-map: (

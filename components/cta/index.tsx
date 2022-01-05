@@ -13,7 +13,7 @@ type CtaProps = {
 
 const Cta = React.memo(function Cta(props: CtaProps) {
     return <button 
-        className={classnames([styles[props.type]], {
+        className={classnames([styles.cta, styles[props.type]], {
             [styles[props.icon || '']]: Boolean(props.icon)
         })}
         onClick={props.onClick} 

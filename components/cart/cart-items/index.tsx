@@ -1,6 +1,5 @@
 import Cta from 'Components/cta';
 import { CartContext } from 'context/cart';
-import Link from 'next/link';
 import { useRouter } from 'next/router';
 import React, { Fragment, useCallback, useContext } from 'react';
 import CartTable from '../cart-table';

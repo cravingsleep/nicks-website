@@ -69,7 +69,7 @@ function Listings() {
             description={experience}
         />
         <Listing
-            title="A little more about me..."
+            title="Me"
             description={aboutme}
             // logoUrl="/face.jpg"
             // logoAlt="A picture of me"
