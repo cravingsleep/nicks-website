@@ -19,6 +19,14 @@ $borderColour: rgb(163, 161, 161);
     border: 2px solid $colour;
 }
 
+@mixin Divider {
+    border-bottom: 2px solid $borderColour;
+
+    &:first-of-type {
+        border-top: 2px solid $borderColour;
+    }
+}
+
 $shadowOffset: 3px;
 
 @mixin Shadow($baseColour, $isActive: false) {

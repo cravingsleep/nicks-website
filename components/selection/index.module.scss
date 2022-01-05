@@ -1,0 +1,12 @@
+@import 'design';
+
+.selections {
+    @include MarginVertical;
+}
+
+.quantity {
+    text-align: right;
+    font-weight: bold;
+
+    font-size: 0.75em;
+}

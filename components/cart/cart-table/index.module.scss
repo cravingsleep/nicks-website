@@ -9,13 +9,7 @@
     text-align: center;
 }
 
-.cart-item {
-    border-bottom: 2px solid $borderColour;
-
-    &:first-child {
-        border-top: 2px solid $borderColour;
-    }
-    
+.cart-item {    
     td {
         padding-top: 0.5em;
         padding-bottom: 0.5em;

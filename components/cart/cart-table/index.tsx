@@ -1,7 +1,9 @@
 import Cta from 'Components/cta';
 import { CartContext } from 'context/cart';
 import React, { Fragment, useCallback, useContext } from 'react';
+import classnames from 'Utils/classnames';
 import styles from './index.module.scss';
+import design from 'Design';
 
 type RemoveCartItemButtonProps = {
     title: string,
@@ -32,7 +34,6 @@ function RemoveCartItemButton(props: RemoveCartItemButtonProps) {
 type CartTableProps = {
     title: string,
     onClearAll?: () => void,
-    hideButtons?: boolean
 }
 
 function CartTable(props: CartTableProps) {
@@ -50,7 +51,7 @@ function CartTable(props: CartTableProps) {
                 <table className={styles['cart-items']}>
                     <tbody>
                         {state.cart.toArray().map(item => <tr
-                            className={styles['cart-item']} 
+                            className={classnames([design.divider, styles['cart-item']])} 
                             key={item.title}
                         >
                             <td>
@@ -59,7 +60,7 @@ function CartTable(props: CartTableProps) {
                             <td>
                                 {item.logoUrl && <img className={styles.logo} src={item.logoUrl} />}
                             </td>
-                            {props.hideButtons !== true && <td>
+                            <td>
                                 <RemoveCartItemButton
                                     title={item.title}
                                     // if the cart item is the last one we want to emit
@@ -68,7 +69,7 @@ function CartTable(props: CartTableProps) {
                                         state.cart.itemCount() === 1 ? lastRemoved : undefined
                                     }
                                 />
-                            </td>}
+                            </td>
                         </tr>)}
                     </tbody>
                 </table>

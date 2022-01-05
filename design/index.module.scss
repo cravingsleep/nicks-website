@@ -3,3 +3,7 @@
 .box-border {
     @include Box;
 }
+
+.divider {
+    @include Divider;
+}
