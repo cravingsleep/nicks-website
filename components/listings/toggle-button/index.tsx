@@ -1,24 +1,21 @@
 import React, { useCallback, useContext } from 'react';
 import { CartContext } from 'context/cart';
 import Cta from 'Components/cta';
+import type { ItemTitle } from 'data';
 
 type ListingToggleButtonProps = {
-    title: string,
-    logoUrl?: string
+    title: ItemTitle
 }
 
 const ListingToggleButton = React.memo(function ListingToggleButton(props: ListingToggleButtonProps) {
-    const { title, logoUrl } = props;
+    const { title } = props;
 
     const { state, dispatch } = useContext(CartContext);
 
     const onClick = useCallback(() => {
         dispatch({
             type: 'toggle',
-            item: {
-                title,
-                logoUrl
-            }
+            item: title
         });
     }, []);
 

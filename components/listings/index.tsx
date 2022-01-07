@@ -71,8 +71,6 @@ function Listings() {
         <Listing
             title="Me"
             description={aboutme}
-            // logoUrl="/face.jpg"
-            // logoAlt="A picture of me"
         />
     </ul>;
 }

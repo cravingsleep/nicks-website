@@ -44,6 +44,14 @@
         // make the buttons sink into the shadow for a press feel
         transform: translate($shadowOffset, $shadowOffset);
     }
+
+    &[disabled] {
+        background-color: rgb(173, 171, 171);
+        box-shadow: none;
+        cursor: not-allowed;
+        transform: translate($shadowOffset, $shadowOffset);
+        border: 2px solid rgb(83, 82, 82);
+    }
 }
 
 .positive {
@@ -52,6 +60,10 @@
 
 .negative {
     @include CtaColour(rgb(226, 34, 34));
+}
+
+.neutral {
+    @include CtaColour(rgb(63, 152, 235));
 }
 
 $icon-map: (

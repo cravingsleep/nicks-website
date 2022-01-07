@@ -3,9 +3,10 @@ import { Image } from 'Components/image';
 import styles from './index.module.scss';
 import design from 'Design';
 import ListingAddButton from '../toggle-button';
+import type { ItemTitle } from 'data';
 
 type ListingProps = {
-    title: string,
+    title: ItemTitle,
     description: string,
     logoUrl?: string,
     logoAlt?: string
@@ -28,7 +29,7 @@ function Listing(props: ListingProps) {
             </div>
         </section>
         <section className={styles['buy-container']}>
-            <ListingAddButton title={title} logoUrl={logoUrl} />
+            <ListingAddButton title={title} />
         </section>
     </li>;
 }

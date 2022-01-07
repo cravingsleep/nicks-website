@@ -1,0 +1,9 @@
+@import 'design';
+
+.options {
+    @include MarginVertical;
+
+    display: flex;
+
+    justify-content: space-around;
+}

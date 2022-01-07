@@ -4,9 +4,10 @@ import React, { Fragment, useCallback, useContext } from 'react';
 import classnames from 'Utils/classnames';
 import styles from './index.module.scss';
 import design from 'Design';
+import { ItemTitle } from 'data';
 
 type RemoveCartItemButtonProps = {
-    title: string,
+    title: ItemTitle,
     onRemove?: () => void
 }
 

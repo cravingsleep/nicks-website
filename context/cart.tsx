@@ -1,5 +1,6 @@
 import React, { Dispatch, useReducer } from 'react';
-import Cart, { CartItem } from './domain';
+import Cart from './domain';
+import type { ItemTitle } from 'data';
 
 type State = {
     cart: Cart
@@ -17,17 +18,17 @@ const CartContext = React.createContext(emptyCartContext);
 
 type AddCart = {
     type: 'add',
-    item: CartItem
+    item: ItemTitle
 }
 
 type RemoveCart = {
     type: 'remove',
-    title: string
+    title: ItemTitle
 }
 
 type ToggleCart = {
     type: 'toggle',
-    item: CartItem
+    item: ItemTitle
 }
 
 type ClearCart = {
