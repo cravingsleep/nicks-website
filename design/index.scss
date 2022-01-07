@@ -7,12 +7,12 @@ $borderColour: rgb(163, 161, 161);
 }
 
 @mixin MarginVertical {
-    margin-top: 0.75em;
-    margin-bottom: 0.75em;
+    margin-top: 0.75rem;
+    margin-bottom: 0.75rem;
 }
 
 @mixin Margin {
-    margin: 0.75em;
+    margin: 0.75rem;
 }
 
 @mixin Border($colour) {

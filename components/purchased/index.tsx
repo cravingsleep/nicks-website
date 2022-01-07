@@ -1,9 +1,9 @@
 import React, { Fragment, useContext, useState } from 'react';
 import { CartContext } from 'context/cart';
 import styles from './index.module.scss';
-import design from 'Design';
 import Cta from 'Components/cta';
 import { ItemTitle } from 'data';
+import Link from 'next/link';
 
 function Purchased() {
     const { state } = useContext(CartContext);
@@ -11,6 +11,14 @@ function Purchased() {
     const [selectedTitle, setSelectedTitle] = useState<ItemTitle | undefined>(undefined);
 
     const displayedCartItem = selectedTitle ? state.cart.get(selectedTitle) : undefined;
+
+    if (state.cart.empty()) {
+        return <Fragment>
+            <p>You have not purchased anything yet!</p>
+            <p>
+                Browse my wares by going back to the <Link href="/"><a>Shop</a></Link>.</p>
+        </Fragment>;
+    }
 
     return <Fragment>
         <nav className={styles.options}>
