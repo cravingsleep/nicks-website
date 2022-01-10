@@ -1,6 +1,5 @@
 @use 'sass:color';
-
-$borderColour: rgb(163, 161, 161);
+@import './colours.scss';
 
 @mixin Padding {
     padding: 1em;

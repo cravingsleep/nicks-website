@@ -2,8 +2,6 @@ import data, { Item, ItemTitle } from 'data';
 
 /**
  * An immutable shopping cart.
- * 
- * TODO make the Map actually immutable.
  */
 class Cart {
     /**
@@ -12,7 +10,7 @@ class Cart {
     public static readonly EMPTY_CART = new Cart(new Set());
 
     /**
-     * the items with title -> item
+     * the items
      */
     private readonly items: Set<ItemTitle>;
 

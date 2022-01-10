@@ -46,7 +46,7 @@
     }
 
     &[disabled] {
-        background-color: rgb(173, 171, 171);
+        background-color: $disabledColour;
         box-shadow: none;
         cursor: not-allowed;
         transform: translate($shadowOffset, $shadowOffset);
@@ -55,15 +55,15 @@
 }
 
 .positive {
-    @include CtaColour(rgb(74, 230, 74));
+    @include CtaColour($positiveColour);
 }
 
 .negative {
-    @include CtaColour(rgb(226, 34, 34));
+    @include CtaColour($negativeColour);
 }
 
 .neutral {
-    @include CtaColour(rgb(63, 152, 235));
+    @include CtaColour($neutralColour);
 }
 
 $icon-map: (
