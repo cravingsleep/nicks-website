@@ -3,6 +3,7 @@ import Listings from 'Components/listings';
 import React, { Fragment } from 'react';
 import Head from 'next/head';
 import styles from './index.module.scss';
+import FilterProvider from 'context/filters';
 
 function Home() {
     return <Fragment>
@@ -12,10 +13,12 @@ function Home() {
             <link rel="prefetch" href="/cart-svgrepo-com.svg" />
             <link rel="prefetch" href="/close-svgrepo-com.svg" />
         </Head>
-        <div className={styles.container}>
-            <ShoppingCart />
-            <Listings />
-        </div>
+        <FilterProvider>
+            <div className={styles.container}>
+                <ShoppingCart />
+                <Listings />
+            </div>
+        </FilterProvider>
     </Fragment>;
 }
 
