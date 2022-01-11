@@ -4,6 +4,7 @@ import React, { Fragment } from 'react';
 import Head from 'next/head';
 import styles from './index.module.scss';
 import FilterProvider from 'context/filters';
+import Filters from 'Components/filters';
 
 function Home() {
     return <Fragment>
@@ -14,6 +15,7 @@ function Home() {
             <link rel="prefetch" href="/close-svgrepo-com.svg" />
         </Head>
         <FilterProvider>
+            <Filters />
             <div className={styles.container}>
                 <ShoppingCart />
                 <Listings />

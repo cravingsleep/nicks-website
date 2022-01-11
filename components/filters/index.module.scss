@@ -1,0 +1,25 @@
+@import 'design';
+
+.title {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1em;
+    justify-content: space-between;
+}
+
+.count {
+    font-style: italic;
+}
+
+.filters {
+    @include MarginVertical;
+
+    display: flex;
+    justify-content: space-around;
+    gap: 1em;
+    flex-wrap: wrap;
+
+    button {
+        flex-grow: 1;
+    }
+}

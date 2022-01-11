@@ -3,24 +3,44 @@ import React, { Dispatch, useReducer } from 'react';
 
 type State = { filters: Set<Tag> };
 
-const FilterContext = React.createContext({ 
+type ToggleAction = {
+    type: 'toggle',
+    tag: Tag
+}
+
+type ClearAction = {
+    type: 'clear'
+}
+
+type Action = ToggleAction | ClearAction;
+
+export const FilterContext = React.createContext({ 
     state: {
         filters: new Set<Tag>()
     },
     // eslint-disable-next-line @typescript-eslint/no-empty-function
-    dispatch: (() => {}) as Dispatch<Tag>
+    dispatch: (() => {}) as Dispatch<Action>
 });
 
-function filterReducer(state: State, action: Tag): State {
+function filterReducer(state: State, action: Action): State {
     const { filters } = state;
+    const { type } = action;
 
-    if (filters.has(action)) {
-        filters.delete(action);
-    } else {
-        filters.add(action);
+    switch (type) {
+        case 'toggle': {
+            const { tag } = action;
+
+            if (filters.has(tag)) {
+                filters.delete(tag);
+            } else {
+                filters.add(tag);
+            }
+
+            return { filters };
+        }
+        case 'clear':
+            return { filters: new Set() };
     }
-
-    return { filters };
 }
 
 type FilterProviderProps = {
