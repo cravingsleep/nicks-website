@@ -1,10 +1,5 @@
 import data, { Item, ItemTitle } from 'data';
 
-/**
- * An immutable shopping cart.
- * 
- * TODO make the Map actually immutable.
- */
 class Cart {
     /**
      * The default empty cart.
