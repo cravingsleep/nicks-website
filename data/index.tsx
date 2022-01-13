@@ -1,3 +1,6 @@
+import React from 'react';
+import ReactExplanation from './react';
+
 export type ItemTitle = 'React' | 'NodeJS' | 'SCSS' | 'Jenkins' | 'Docker' | 'Experience' | 'Me';
 
 export type Tag = 'Tech' | 'Dev Ops' | 'Other';
@@ -9,7 +12,7 @@ export type Item = {
         alt: string
     },
     description: string,
-    explanation: string,
+    explanation: string | JSX.Element,
     tags: Tag[]
 };
 
@@ -24,7 +27,7 @@ const data: Record<ItemTitle, Item> = {
             My time in the Hotels.com Web Platform team. Supporting a new and
             large React application from 0% traffic to 100%.
         `,
-        explanation: '',
+        explanation: <ReactExplanation />,
         tags: ['Tech']
     },
     NodeJS:  {

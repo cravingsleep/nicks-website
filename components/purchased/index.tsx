@@ -34,7 +34,7 @@ function Purchased() {
         </nav>
         {displayedCartItem ? <Fragment>
             <h3>{displayedCartItem.title}</h3>
-            <p>{displayedCartItem.explanation}</p>
+            {displayedCartItem.explanation}
         </Fragment> : <p>
             Choose an item from the list above to see your purchase!
         </p>}
