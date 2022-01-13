@@ -16,17 +16,17 @@ const emptyCartContext = {
 
 const CartContext = React.createContext(emptyCartContext);
 
-type AddCart = {
+type Add = {
     type: 'add',
     item: ItemTitle
 }
 
-type RemoveCart = {
+type RemoveItem = {
     type: 'remove',
     title: ItemTitle
 }
 
-type ToggleCart = {
+type ToggleItem = {
     type: 'toggle',
     item: ItemTitle
 }
@@ -35,7 +35,11 @@ type ClearCart = {
     type: 'clear'
 }
 
-type CartAction = AddCart | RemoveCart | ToggleCart | ClearCart;
+type Buy = {
+    type: 'buy'
+}
+
+type CartAction = Add | RemoveItem | ToggleItem | ClearCart | Buy;
 
 function cartReducer(state: State, action: CartAction): State {
     switch (action.type) {
@@ -51,6 +55,10 @@ function cartReducer(state: State, action: CartAction): State {
         case 'clear':
             return {
                 cart: state.cart.clear()
+            };
+        case 'buy':
+            return {
+                cart: state.cart.buy()
             };
         default:
             throw new Error('Unrecognised cart command.');

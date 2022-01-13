@@ -1,8 +1,9 @@
 import React, { Fragment, useContext, useState } from 'react';
+
 import { CartContext } from 'context/cart';
 import styles from './index.module.scss';
 import Cta from 'Components/cta';
-import { ItemTitle } from 'data';
+import data, { ItemTitle } from 'data';
 import Link from 'next/link';
 
 function Purchased() {
@@ -10,9 +11,9 @@ function Purchased() {
 
     const [selectedTitle, setSelectedTitle] = useState<ItemTitle | undefined>(undefined);
 
-    const displayedCartItem = selectedTitle ? state.cart.get(selectedTitle) : undefined;
+    const displayedCartItem = selectedTitle ? data[selectedTitle] : undefined;
 
-    if (state.cart.empty()) {
+    if (state.cart.isPurchasedEmpty()) {
         return <Fragment>
             <p>You have not purchased anything yet!</p>
             <p>
@@ -23,7 +24,7 @@ function Purchased() {
 
     return <Fragment>
         <nav className={styles.options}>
-            {state.cart.toArray().map(item => <Cta
+            {state.cart.purchasedItems().map(item => <Cta
                 key={item.title}  
                 type="neutral" 
                 onClick={() => setSelectedTitle(item.title)} 

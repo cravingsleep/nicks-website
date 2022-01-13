@@ -51,7 +51,7 @@ function CartTable(props: CartTableProps) {
             : <Fragment>
                 <table className={styles['cart-items']}>
                     <tbody>
-                        {state.cart.toArray().map(item => <tr
+                        {state.cart.listingsArray().map(item => <tr
                             className={classnames([design.divider, styles['cart-item']])} 
                             key={item.title}
                         >

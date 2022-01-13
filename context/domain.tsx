@@ -14,10 +14,16 @@ class Cart {
     /**
      * the items with title -> item
      */
-    private readonly items: Set<ItemTitle>;
+    private items: Set<ItemTitle>;
+
+    /**
+     * The items the user has purchased.
+     */
+    private purchased: Set<ItemTitle>;
 
     constructor(items: Set<ItemTitle>) {
         this.items = items;
+        this.purchased = new Set();
     }
 
     public toggle(title: ItemTitle): Cart {
@@ -29,7 +35,17 @@ class Cart {
     public add(title: ItemTitle): Cart {
         this.items.add(title);
 
-        return new Cart(this.items);
+        return this;
+    }
+
+    public buy(): Cart {
+        // clone the cart to purchased
+        Array.from(this.items).forEach(item => this.purchased.add(item));
+
+        // reset the cart items
+        this.items = new Set();
+
+        return this;
     }
 
     public get(title: ItemTitle): Item | undefined {
@@ -39,18 +55,28 @@ class Cart {
     public remove(title: ItemTitle): Cart {
         this.items.delete(title);
 
-        return new Cart(this.items);
+        return this;
     }
 
     public clear(): Cart {
-        return new Cart(new Set());
+        this.items = new Set();
+        
+        return this;
     }
 
     public has(title: ItemTitle): boolean {
         return this.items.has(title);
     }
 
-    public toArray(): Item[] {
+    public isPurchased(title: ItemTitle): boolean {
+        return this.purchased.has(title);
+    }
+
+    public purchasedItems(): Item[] {
+        return Array.from(this.purchased).map(itemTitle => data[itemTitle]);
+    }
+
+    public listingsArray(): Item[] {
         return Array.from(this.items).map(itemTitle => data[itemTitle]);
     }
 
@@ -59,7 +85,15 @@ class Cart {
     }
 
     public empty(): boolean {
-        return this.toArray().length === 0;
+        return this.listingsArray().length === 0;
+    }
+
+    public isPurchasedEmpty(): boolean {
+        return this.purchased.size === 0;
+    }
+
+    public allPurchased(): boolean {
+        return this.purchased.size === Object.keys(data).length;
     }
 }
 

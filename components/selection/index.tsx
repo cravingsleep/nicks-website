@@ -9,7 +9,7 @@ function Selection() {
     return <Fragment>
         <h2>Selection</h2>
         <section className={styles.selections}>
-            {state.cart.toArray().map(item => 
+            {state.cart.listingsArray().map(item => 
                 <SingleSelection key={item.title} title={item.title} />)
             }
         </section>

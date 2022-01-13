@@ -2,6 +2,7 @@ import React, { useCallback, useContext } from 'react';
 import { CartContext } from 'context/cart';
 import Cta from 'Components/cta';
 import type { ItemTitle } from 'data';
+import styles from './index.module.scss';
 
 type ListingToggleButtonProps = {
     title: ItemTitle
@@ -19,9 +20,10 @@ const ListingToggleButton = React.memo(function ListingToggleButton(props: Listi
         });
     }, []);
 
+    const purchased = state.cart.isPurchased(title);
     const added = state.cart.has(title);
 
-    return <Cta 
+    return purchased ? <p className={styles.purchased}>Purchased</p> : <Cta 
         type={added ? 'negative' : 'positive'}
         icon={added ? 'bin' : 'add'}
         onClick={onClick} 
