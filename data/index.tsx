@@ -1,5 +1,11 @@
 import React from 'react';
+import DockerExplanation from './docker';
+import ExperienceExplanation from './experience';
+import JenkinsExplanation from './jenkins';
+import MeExplanation from './me';
+import NodeJSExplanation from './nodejs';
 import ReactExplanation from './react';
+import SCSSExplanation from './scss';
 
 export type ItemTitle = 'React' | 'NodeJS' | 'SCSS' | 'Jenkins' | 'Docker' | 'Experience' | 'Me';
 
@@ -12,7 +18,7 @@ export type Item = {
         alt: string
     },
     description: string,
-    explanation: string | JSX.Element,
+    explanation: JSX.Element,
     tags: Tag[]
 };
 
@@ -40,7 +46,7 @@ const data: Record<ItemTitle, Item> = {
             My work creating an ExpressJS backend to support massive amounts
             of traffic.
         `,
-        explanation: '',
+        explanation: <NodeJSExplanation />,
         tags: ['Tech']
     },
     SCSS:  {
@@ -53,7 +59,7 @@ const data: Record<ItemTitle, Item> = {
             My experience working with carefully constructed design systems that meet the highest
             standards for responsiveness and accessibility. 
         `,
-        explanation: '',
+        explanation: <SCSSExplanation />,
         tags: ['Tech']
     },
     Jenkins: {
@@ -65,7 +71,7 @@ const data: Record<ItemTitle, Item> = {
         description: `
             How I constructed a new Spinnaker and Jenkins pipeline with Github Actions integration.
         `,
-        explanation: '',
+        explanation: <JenkinsExplanation />,
         tags: ['Tech', 'Dev Ops']
     },
     Docker: {
@@ -73,7 +79,7 @@ const data: Record<ItemTitle, Item> = {
         description: `
             How I rewrote Docker images for multi-stage build improvements.
         `,
-        explanation: '',
+        explanation: <DockerExplanation />,
         tags: ['Tech', 'Dev Ops']
     },
     Experience: {
@@ -81,7 +87,7 @@ const data: Record<ItemTitle, Item> = {
         description:`
             My time at Expedia Group and the various teams I have been a part of.
         `,
-        explanation: '',
+        explanation: <ExperienceExplanation />,
         tags: ['Tech', 'Other']
     },
     Me: {
@@ -90,7 +96,7 @@ const data: Record<ItemTitle, Item> = {
             My time on the Great Britain U24 Ultimate Frisbee team and my love of juggling, 
             sports and travel!
         `,
-        explanation: '',
+        explanation: <MeExplanation />,
         tags: ['Other']
     }
 };
