@@ -30,7 +30,7 @@
     pointer-events: all;
 }
 
-$baseColour: rgb(62, 62, 228);
+$baseColour: $neutralColour;
 
 .cart-button {
     @include Padding;
