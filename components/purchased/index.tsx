@@ -17,7 +17,7 @@ function Purchased() {
         return <Fragment>
             <p>You have not purchased anything yet!</p>
             <p>
-                Browse my wares by going back to the <Link href="/"><a>Shop</a></Link>.
+                Browse my wares by going back to the <Link href="/">Shop</Link>.
             </p>
         </Fragment>;
     }

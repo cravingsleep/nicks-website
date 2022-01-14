@@ -13,9 +13,13 @@ function Footer() {
             &nbsp;and the logos which are from <a href="https://wikipedia.com">Wikipedia</a>.
         </p>
         <p>Made using React, NextJS, SCSS and Typescript.</p>
+        <a target="_blank" href="https://github.com/cravingsleep/nicks-website" rel="noreferrer">
+            Check out the source!
+        </a>
         <p className={styles['platform-message-desktop']}>You should try it on Desktop too!</p>
         <p className={styles['platform-message-mobile']}>You should try it on Mobile too!</p>
         <p>Contact: <a href="mailto:cravingsleep@gmail.com">cravingsleep@gmail.com</a></p>
+        <p className={styles.joke}>Any spelling mistakes are fully intentional and are designed to frustrate the reader.</p>
     </footer>;
 }
 
