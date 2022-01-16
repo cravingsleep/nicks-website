@@ -24,7 +24,7 @@ function Listing(props: ListingProps) {
             />}
             <div className={styles['listing-item']}>
                 <h3>{title}</h3>
-                <h5>Find out more about...</h5>
+                <h4>Find out more about...</h4>
                 <p>{description}</p>
             </div>
         </section>
