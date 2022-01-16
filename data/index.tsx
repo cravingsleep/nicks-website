@@ -43,8 +43,8 @@ const data: Record<ItemTitle, Item> = {
             alt: 'NodeJS logo'
         },
         description: `
-            My work creating an ExpressJS backend to support massive amounts
-            of traffic.
+            How I have worked on multiple NodeJS applications from app health
+            monitoring to web build systems.
         `,
         explanation: <NodeJSExplanation />,
         tags: ['Tech']
@@ -85,7 +85,8 @@ const data: Record<ItemTitle, Item> = {
     Experience: {
         title: 'Experience',
         description:`
-            My time at Expedia Group and the various teams I have been a part of.
+            My time at Expedia Group and the various teams I have been a part of as
+            well as some awards I have acquired along the way.
         `,
         explanation: <ExperienceExplanation />,
         tags: ['Tech', 'Other']
