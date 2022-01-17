@@ -28,6 +28,9 @@
       ],
       "Design": [
         "design/index.module.scss"
+      ],
+      "Context/*": [
+        "context/*"
       ]
     }
   },

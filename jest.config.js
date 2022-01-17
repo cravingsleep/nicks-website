@@ -5,11 +5,12 @@ const { compilerOptions } = require('./tsconfig');
 
 /** @type {import('ts-jest/dist/types').InitialOptionsTsJest} */
 module.exports = {
-    preset: 'ts-jest',
-    extensionsToTreatAsEsm: ['.ts', '.tsx'],
+    preset: 'ts-jest/presets/default-esm',
+    extensionsToTreatAsEsm: ['.ts'],
     globals: {
         'ts-jest': {
             useESM: true,
+            tsconfig: './tsconfig.spec.json'
         },
     },
     testEnvironment: 'node',

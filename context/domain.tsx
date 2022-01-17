@@ -1,10 +1,10 @@
-import data, { Item, ItemTitle } from 'data';
+import data, { Item, ItemTitle } from '../data/index';
 
 class Cart {
     /**
      * The default empty cart.
      */
-    public static readonly EMPTY_CART = new Cart(new Set());
+    public static readonly EMPTY_CART = new Cart();
 
     /**
      * the items with title -> item
@@ -16,8 +16,8 @@ class Cart {
      */
     private purchased: Set<ItemTitle>;
 
-    constructor(items: Set<ItemTitle>) {
-        this.items = items;
+    constructor() {
+        this.items = new Set();
         this.purchased = new Set();
     }
 
@@ -27,7 +27,7 @@ class Cart {
         return hasItem ? this.remove(title) : this.add(title);
     }
 
-    public add(title: ItemTitle): Cart {
+    private add(title: ItemTitle): Cart {
         this.items.add(title);
 
         return this;
@@ -55,7 +55,7 @@ class Cart {
 
     public clear(): Cart {
         this.items = new Set();
-        
+
         return this;
     }
 
