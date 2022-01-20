@@ -18,7 +18,7 @@ function Footer() {
         </a>
         <p className={styles['platform-message-desktop']}>You should try it on Desktop too!</p>
         <p className={styles['platform-message-mobile']}>You should try it on Mobile too!</p>
-        <p>Contact: <a href="mailto:cravingsleep@gmail.com">cravingsleep@gmail.com</a></p>
+        <p>Contact: <a href="mailto:nbarker01@protonmail.com">nbarker01@protonmail.com</a></p>
         <p className={styles.joke}>Any spelling mistakes are fully intentional and are designed to frustrate the reader.</p>
     </footer>;
 }
