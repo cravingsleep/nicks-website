@@ -10,10 +10,12 @@ function Header() {
 
     return <header className={classnames([design['box-border'], styles.header])}>
         <h3>Nick&apos;s Portfolio Shop</h3>
-        {router.pathname === '/' && <Link href="/whatisthis">What&#39;s this?</Link>}
+        {router.pathname === '/' || router.pathname === '/shop' && 
+            <Link href="/whatisthis">What&#39;s this?</Link>}
         <nav className={styles.nav}>
-            {router.pathname !== '/inventory' && <Link href="/inventory">My Items</Link>}
-            {router.pathname !== '/' && <Link href="/">Shop</Link>}
+            {router.pathname !== '/' && <Link href="/">Home</Link>}
+            {router.pathname === '/shop' && <Link href="/inventory">My Items</Link>}
+            {router.pathname !== '/shop' && <Link href="/shop">Shop</Link>}
         </nav>
     </header>;
 }

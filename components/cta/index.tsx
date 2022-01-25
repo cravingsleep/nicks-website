@@ -6,7 +6,7 @@ type Icon = 'add' | 'close' | 'cart' | 'bin';
 
 type CtaProps = {
     type: 'positive' | 'negative' | 'neutral',
-    onClick: MouseEventHandler<HTMLButtonElement>,
+    onClick?: MouseEventHandler<HTMLButtonElement>,
     icon?: Icon,
     children: React.ReactElement | React.ReactElement[] | string,
     disabled?: boolean

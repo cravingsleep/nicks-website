@@ -4,6 +4,7 @@ import styles from './index.module.scss';
 import Cta from 'Components/cta';
 import { Tag } from 'data';
 import { FilterContext } from 'context/filters';
+import classnames from 'Utils/classnames';
 
 type FilterButtonProps = {
     tag: Tag
@@ -39,7 +40,7 @@ function FilterCount() {
 }
 
 const Filters = React.memo(function Filters() {
-    return <section className={design['box-border']}>
+    return <section className={classnames([styles.container, design['box-border']])}>
         <div className={styles.title}>
             <h3>Filters</h3>
             <FilterCount />
