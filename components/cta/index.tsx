@@ -12,8 +12,9 @@ type CtaProps = {
     disabled?: boolean
 }
 
-const Cta = React.memo(function Cta(props: CtaProps) {
+const Cta = React.forwardRef(function Cta(props: CtaProps, ref: React.ForwardedRef<HTMLButtonElement>) {
     return <button 
+        ref={ref}
         disabled={props.disabled}
         className={classnames([styles.cta], {
             [styles[props.type]]: !props.disabled,
