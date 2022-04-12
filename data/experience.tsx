@@ -2,6 +2,28 @@ import React, { Fragment } from 'react';
 
 function ExperienceExplanation() {
     return <Fragment>
+        <h5>UI Foundations Team</h5>
+        <h6>September 2018 - Present</h6>
+        <p>
+            The Web Platform team evolved to become UI Foundations. Our remit concerns the whole of
+            performance within the organisation. This includes playing a leading role in educating
+            and broadcasting information concerning front end performance metrics and measuring.
+
+            We are creating a brand new Typescript NodeJS application, built on Github Actions, that
+            checks for performance issues in release branches.
+        </p>
+        <h5>Web Platform Team</h5>
+        <h6>July 2018 - September 2018</h6>
+        <p>
+            After obtaining my degree from the University of Surrey I returned to Expedia and joined the Web Platform
+            team. It was there that my React experience really ramped up as we took a whole new website experience
+            for <a href="https://hotels.com">hotels.com</a> from 0% traffic to 100% across three years. 
+        </p>
+        <p>
+            I became a subject matter expert on the website, from everything to React components to the build pipeline.
+            I got to cut my teeth on a whole raft of new technologies as well including AWS, Kubernetes, Grafana, Splunk
+            and even improved my Bash programming.
+        </p>
         <h5>Search Engine Management Tools Team</h5>
         <h6>July 2016 - August 2017</h6>
         <p>
@@ -14,18 +36,7 @@ function ExperienceExplanation() {
             programming because of it. I also got to take part in the Expedia Code Academy where I taught both
             Scala and Python to a mixture of technical and non-technical colleagues.
         </p>
-        <h5>Web Platform Team</h5>
-        <h6>July 2018 - Present</h6>
-        <p>
-            After obtaining my degree from the University of Surrey I returned to Expedia and joined the Web Platform
-            team. It was there that my React experience really ramped up as we took a whole new website experience
-            for <a href="https://hotels.com">hotels.com</a> from 0% traffic to 100% across three years. 
-        </p>
-        <p>
-            I became a subject matter expert on the website, from everything to React components to the build pipeline.
-            I got to cut my teeth on a whole raft of new technologies as well including AWS, Kubernetes, Grafana, Splunk
-            and even improved my Bash programming.
-        </p>
+
         <h3>Achievements</h3>
         <h5>Expedia Horizon Award</h5>
         <p>
