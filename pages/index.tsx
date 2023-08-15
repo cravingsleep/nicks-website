@@ -18,24 +18,6 @@ function IndexPage() {
                 </Link>
             </div>
         </section>
-        <section className={design['box-border']}>
-            <h2>My Other Work</h2>
-            <p>While you are here check out some of my other projects.</p>
-            <ul>
-                <li>
-                    <a 
-                        target="_blank"
-                        rel="noreferrer"
-                        href="https://radiant-everglades-00233.herokuapp.com/">
-                            Premier League Percentage Points Taken Table
-                    </a>
-                    <p className={styles['other-info']}>
-                        A Premier League table sorted by percentage of points won.
-                        Updated every hour with a neat little cache layer.
-                    </p>
-                </li>
-            </ul>
-        </section>
     </Fragment>;
 }
 
